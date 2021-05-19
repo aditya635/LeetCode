@@ -1,1 +1,1 @@
-Doing Leetcode 4 questions everday
+Doing Leetcode questions everday
