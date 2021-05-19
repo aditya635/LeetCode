@@ -1,0 +1,26 @@
+ void rotate(vector<vector<int>>& matrix) {
+        vector<int> papa;
+         for (int i = 0; i < matrix.size(); i++)
+    {
+        for (int j = 0; j < matrix[i].size(); j++)
+        {
+            papa.push_back(matrix[j][i]);
+        }   
+        
+    }
+        
+    int l=0;
+       
+            for(int i=0;i<matrix.size();i++)
+            {
+                for(int j=matrix[i].size()-1;j>=0;j--)
+                {
+                    matrix[i][j]=papa[l];
+                    l++;
+                }
+            }
+        l=0;
+        
+    
+        
+    }
