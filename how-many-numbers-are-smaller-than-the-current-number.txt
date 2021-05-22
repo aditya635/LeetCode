@@ -1,0 +1,47 @@
+ vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+        vector<int> lol;
+        for(int i=0;i<nums.size();i++)
+        {int count =0;
+            for(int j=0;j<nums.size();j++)
+            {
+                if(nums[i]>nums[j])
+                {
+                    count++;
+                }
+            }lol.push_back(count);
+        }return lol;
+    }
+
+//hashtable
+Input: nums = [8,1,2,2,3]
+Output: [4,0,1,1,3]
+
+snum=sorted array(nums) = [1,2,2,3,8]
+mp=(snum[i],i) (tail to head insertion in map)
+8 4
+3 3
+2 2=>1
+1 0
+
+nums[i]=maps[nums[i]]
+nums=[4,0,1,1,3]=output
+
+class Solution {
+public:
+    vector<int> smallerNumbersThanCurrent(vector<int>& nums) 
+    {
+    
+        map<int,int> mp;    
+        int n=nums.size();
+        vector<int> snum=nums;
+        
+        sort(snum.begin(),snum.end());
+        for(int i=n-1;i>=0;i--)
+            mp[snum[i]]=i;
+        
+        for(int i=0;i<n;i++)
+            nums[i]=mp[nums[i]];
+        
+        return nums;
+    }
+};

@@ -1,0 +1,23 @@
+  bool isPalindrome(int x) {
+       
+        int count=0;
+        if(x<0)
+        {return false;}
+        else
+        {long long a=x;
+         long long b=0;
+            while(a>0)
+            {
+               b=b*10+a%10;
+                a/=10;
+            }
+         if(b==x)
+         {
+             return true;
+         }
+         else
+         {
+             return false;
+         }
+    }
+    }
